@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    name="viewport" />
+
+<head>
+    <meta charset="UTF-8" />
+    <title>test</title>
+    <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js"></script>
+    
+</head>
+
+<body>
+    <style>
+        .menu {
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 30px;
+            height: 20px;
+        }
+
+        .bars {
+            width: 30px;
+            height: 4px;
+            background: #000;
+        }
+
+        .bars::before,
+        .bars::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #000;
+        }
+
+        .bars::before {
+            margin-top: 9px;
+        }
+
+        .bars::after {
+            margin-top: 18px;
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: -200vw;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 50px 0;
+        }
+
+        nav ul li a {
+            color: #fafafa;
+            font-size: 2em;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        nav ul li a:after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 3px;
+            border-radius: 5px;
+            background: #fff;
+            bottom: -10px;
+            left: 0;
+            transform-origin: left;
+            transition: transform .5s ease;
+            transform: scaleX(0);
+        }
+
+
+        nav ul li a:hover:after {
+            transform: scaleX(1);
+        }
+
+        nav .close {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 6%;
+            right: 5%;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        nav h2 {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            opacity: 0;
+            pointer-events: none;
+            color: #fff;
+            font-size: 2em;
+        }
+
+        nav .close div::before,
+        nav .close div::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background: #fff;
+            transition: background .5s ease;
+        }
+
+        nav .close div::before {
+            transform: rotate(-45deg);
+        }
+
+        nav .close div::after {
+            transform: rotate(45deg);
+        }
+
+        nav .close:hover div::before,
+        nav .close:hover div::after {
+            background: rgb(209, 3, 3);
+        }
+    </style>
+    <header class="header">
+        <div class="menu">
+            <div class="bars"></div>
+        </div>
+
+        <!-- <nav>
+            <div class="wrapper">
+                <div class="logo"><a href="#">Logo</a></div>
+                <input type="radio" name="slider" id="menu-btn">
+                <input type="radio" name="slider" id="close-btn">
+                <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <li><a href="#">메뉴</a></li>
+                    <li><a href="#">메뉴</a></li>
+                    <li>
+                        <a href="#" class="desktop-item">메뉴</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                        <ul class="drop-menu">
+                            <li><a href="#">Drop menu 1</a></li>
+                            <li><a href="#">Drop menu 2</a></li>
+                            <li><a href="#">Drop menu 3</a></li>
+                            <li><a href="#">Drop menu 4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="desktop-item">메뉴</a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Mega Menu</label>
+                    </li>
+                </ul>
+                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+            </div>
+        </nav> -->
+        <nav>
+            <h2><a href="#">Logo</a></h2>
+            <div class="close">
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        
+
+
+    </style>
+    <section class="section main">
+        <div class="container">
+
+        </div>
+    </section>
+    <section class="section main">
+        <div class="container">
+                <!-- <div class="left">
+                    <div class="main-tit mr">
+                        잘 몰라서 더 많은 세금을<br />
+                        내고 있지 않나요?
+                    </div>
+                    <div class="main-sub">
+                        번거로운 세무에 대한 걱정은 내려놓고<br />
+                        사장님은 사업에만 전념하세요!
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full btn-round">
+                        카카오톡 상담하기
+                    </button>
+                </div>
+                <div class="right">
+                    <div class="main-img--img">
+                        <img src="../images/main_img_1.svg" alt="일러스트" />
+                    </div>
+                </div> -->
+                <p class="main-text">TEXT EFFECT<span>WOAH</span></p>
+                <p class="main-text">GSAP<span>AND CLIPPING</span></p>
+                <p class="main-text">CRAZYYY<span>CRAZYYY</span></p>
+                <p class="main-text">HOVER ON ME<span><a href="https://stacksorted.com/text-effects/minh-pham" target="_blank">SOURCE</a></span></p>
+                <p class="main-text">LIKE THIS?<span><a href="https://twitter.com/juxtopposed" target="_blank">LET'S CONNECT</a></span></p>
+        </div>
+    </section>
+    <section class="section main">
+        <div class="container">
+
+        </div>
+    </section>
+    <!-- <footer class="footer">
+        <div class="footer-wrap">
+            <div class="left">
+                <div class="logo"></div>
+                <div class="info-line">
+                    <span><label>유한회사</label>로켓택스</span>
+                    <span><label>대표자</label>문재완</span>
+                    <span><label>개인정보보호책임자</label>문재완</span>
+                </div>
+                <div class="info-line">
+                    <span><label>사업자등록번호</label>408-86-18047</span>
+                    <span><label>통신판매업</label>2014-서울용산-00936호</span>
+                </div>
+                <div class="info-line">
+                    <span><label>주소</label>서울특별시 송파구
+                        충민로10, 8층 에스16케이5호</span>
+                </div>
+                <div class="copy">
+                    Copyright©2024 로켓택스 All rights reserved
+                </div>
+            </div>
+            <div class="right">
+                고객센터
+                <div class="call">02-514-3708</div>
+                <p>
+                    09:00 ~ 18:00 (점심시간 12:00~13:00) <br />
+                    주말, 공휴일 휴무
+                </p>
+            </div>
+        </div>
+    </footer> -->
+    <div class="modal">
+        <div class="modal-dim"></div>
+        <div class="modal-con">
+            <div class="icon icon-people"></div>
+            계정 정보가 일치하지 않습니다.
+            <div class="btn-wrap">
+                <button type="button" class="btn btn-lg btn-primary btn-round">
+                    확인
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            const open = document.querySelector('.menu');
+            const close = document.querySelector('.close');
+            var tl = gsap.timeline({ defaults: { duration: 0.7, ease: 'expo.inOut' } }); // duration을 0.6초로 변경
+
+            open.addEventListener('click', () => {
+                if (tl.reversed()) {
+                    tl.play();
+                } else {
+                    tl.to('nav', { right: 0, duration: 0.5 }) // 각각의 애니메이션 스텝의 duration을 더 짧게 설정
+                        .to('nav', { height: '100vh', duration: 0.5 }, '-=.1')
+                        .to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: 0.2 }, '-=.4') // stagger 값을 0.1로 줄임
+                        .to('.close', { opacity: 1, pointerEvents: 'all', duration: 0.4 }, "-=.4") // duration을 0.3초로 변경
+                        .to('nav h2', { opacity: 1, duration: 0.5 }, '-=0.6'); // duration을 0.4초로 변경
+                }
+            });
+
+            close.addEventListener('click', () => {
+                tl.reverse();
+            });
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const textElements = gsap.utils.toArray('.main-text');
+
+            textElements.forEach(text => {
+                gsap.to(text, {
+                    backgroundSize: '100%',
+                    ease: 'Power1.easeInOut',
+                    scrollTrigger: {
+                    trigger: text,
+                    start: 'center 80%',
+                    end: 'center 10%',
+                    scrub: true,
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

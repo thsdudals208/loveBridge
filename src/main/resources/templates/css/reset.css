@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/**********
+텍스트 말줄임
+***********/
+/**********
+아이콘
+***********/
+/**********
+wide background
+***********/
+@font-face {
+  font-family: "SUIT Variable";
+  font-weight: 100 900;
+  src: url("./fonts/SUIT-Variable.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Giants";
+  src: url("./fonts/Giants-Regular.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Giants";
+  src: url("./fonts/Giants-Bold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+textarea,
+input,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "SUIT Variable", sans-serif;
+  color: #282828;
+  font-weight: 500;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+html {
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: -0.003em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  word-break: keep-all;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+textarea {
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+strong {
+  font-weight: 700;
+}
+
+th,
+td {
+  vertical-align: middle;
+}
+
+input[type=password] {
+  font-family: initial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+span,
+div {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+b {
+  color: inherit;
+  font-family: inherit;
+}/*# sourceMappingURL=reset.css.map */
