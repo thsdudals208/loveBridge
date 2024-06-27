@@ -1,15 +1,22 @@
 package com.jolipjo.lovebridge.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    // TODO: 사용자 정보 객체 생성
+//    private final UserDetailsService userDetailsService;
+
+//    @Value("${security.rememberMe.tokenValiditySeconds}")
+//    private int rememberMeMaxAgeSeconds;
 
     /*시큐리티 설정*/
     @Bean
@@ -28,6 +35,21 @@ public class SecurityConfig {
                         .permitAll()
                 );
 
+        /*자동 로그인*/
+//        http
+//                .rememberMe((remember) -> remember
+//                        .rememberMeParameter("remember")
+//                        .tokenValiditySeconds(rememberMeMaxAgeSeconds)
+//                        .alwaysRemember(false)
+//                        .userDetailsService(userDetailsService)
+//                );
+//
+//        /*로그아웃 페이지*/
+//        http
+//                .logout( (logout) ->
+//                        logout.logoutUrl("/logout")
+//                        .logoutSuccessUrl("/")
+//                );
 
         /*CSRF 끔(개발용)*/
         http
